@@ -1,65 +1,59 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import TabForm from './components/TabForm';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faPlusSquare, faMinusSquare } from '@fortawesome/free-solid-svg-icons';
 import './App.css';
+
+library.add(faPlusSquare, faMinusSquare);
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav className="navbar navbar-expand-sm navbar-dark">
-          <a className="navbar-brand logo-buzzmonitor" href="#">Buzzmonitor</a>
+        <nav className="navbar navbar-expand-sm">
+          <span className="navbar-brand logo-buzzmonitor">Buzzmonitor</span>
           <ul className="navbar-nav">
-            <a className="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Monitoring
-            </a>
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">Link 1</a>
-            </div>
-            <a className="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              Customer Care
-            </a>
-            <div className="dropdown-menu">
-              <a className="dropdown-item" href="#">Link 1</a>
-            </div>
-            <li className="nav-item dropdown">
-              <a className="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <li className="nav-item">
+              <span className="nav-link-bar">
+                Monitoring
+                <span className="drop-down-arrow">
+                  <span className="arrow-down"></span>
+                </span>
+              </span>
+            </li>
+            <li className="nav-item">
+              <span className="nav-link-bar">
+                Customer Care
+                <span className="drop-down-arrow">
+                  <span className="arrow-down"></span>
+                </span>
+              </span>
+            </li>
+            <li className="nav-item">
+              <span className="nav-link-bar">
                 Analytics
-            </a>
-              <div className="dropdown-menu">
-                <a className="dropdown-item" href="#">Link 1</a>
-              </div>
+                <span className="drop-down-arrow">
+                  <span className="arrow-down"></span>
+                </span>
+              </span>
             </li>
           </ul>
         </nav>
         <div className="container">
           <div className="container-title">
             <h2 className="text-center">Buzzmonitor Admin</h2>
-            <div className="input-group mb-3">
-              <input type="text" className="form-control" placeholder="Search"></input>
-              <div className="input-group-append">
-                <button className="btn btn-primary" type="button">Search</button>
+            <div className="row justify-content-md-center">
+              <div className="col-sm-6">
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Search"></input>
+                  <div className="input-group-append">
+                    <button className="btn btn-primary" type="button">Search</button>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-          <div className="container-tab">
-            <ul className="nav nav-tabs nav-fill nav-justified">
-              <li className="nav-item">
-                <a className="nav-link" href="#">USER</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">PROJECTS&COLLECT</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">MODULES</a>
-              </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">OTHER</a>
-              </li>
-            </ul>
-            <div className="container-button text-right">
-              <button className="btn btn-primary" type="button">Save</button>
-            </div>
-          </div>
+          <TabForm />
         </div>
       </div >
     );

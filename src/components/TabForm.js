@@ -15,6 +15,8 @@ class TabForm extends Component {
       unlimitedCRM: false,
       addExtraQuota: false,
       showMoreInformation: false,
+      totalPostsComsumed: 3000,
+      quotaLimit: 6000,
       brands: [{ name: 'Loreal', postsComsumed: 1200, pauseCollect: false }, { name: 'Garnier', postsComsumed: 900, pauseCollect: false }, { name: 'Colorama', postsComsumed: 900, pauseCollect: false }]
     }
   }
@@ -193,7 +195,7 @@ class TabForm extends Component {
                 </div>
                 <div className="col-sm-5 text-left">
                   <div className="progress">
-                    <div className="progress-bar" style={{ width: '50%' }}>50%</div>
+                    <div className="progress-bar bg-info text-dark" style={{ width: ((this.state.totalPostsComsumed / this.state.quotaLimit) * 100) + '%' }}>{((this.state.totalPostsComsumed / this.state.quotaLimit) * 100) + '%'}</div>
                   </div>
                 </div>
                 <div className="col-sm-2 text-center button-form">
@@ -209,7 +211,7 @@ class TabForm extends Component {
                     <label className="form-label">Posts collecteds in month</label>
                   </div>
                   <div className="col-sm-2 text-left">
-                    <label className="form-label"><i>3000</i></label>
+                    <label className="form-label"><i>{this.state.totalPostsComsumed}</i></label>
                   </div>
                 </div>
                 <div className="form-row">
@@ -217,13 +219,13 @@ class TabForm extends Component {
                     <label className="form-label">Current quota limit</label>
                   </div>
                   <div className="col-sm-2 text-left">
-                    <label className="form-label"><i>6000</i></label>
+                    <label className="form-label"><i>{this.state.quotaLimit}</i></label>
                   </div>
                 </div>
               </div>
               <div className="form-row" style={{ display: this.state.addExtraQuota ? '' : 'none' }}>
                 <div className="col-sm-3 text-right">
-                  <label className="form-label">Add extra quota</label>
+                  <label className="form-label">Extra quota</label>
                 </div>
                 <div className="col-sm-2 text-left">
                   <input type="number" className="form-control"></input>
@@ -245,7 +247,7 @@ class TabForm extends Component {
                   </div>
                   <div className="col-sm-4 text-left">
                     <div className="progress">
-                      <div className="progress-bar" style={{ width: ((elem.postsComsumed / 6000) * 100) + '%' }}>{elem.postsComsumed}/6000</div>
+                      <div className={"progress-bar " + (elem.pauseCollect ? "bg-secondary" : "bg-info") + " text-dark"} style={{ width: ((elem.postsComsumed / this.state.quotaLimit) * 100) + '%' }}>{elem.postsComsumed}/{this.state.quotaLimit}</div>
                     </div>
                   </div>
                   <div className="col-sm-2 text-right">

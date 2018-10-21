@@ -41,9 +41,9 @@ class App extends Component {
         </nav>
         <div className="container">
           <div className="container-title">
-            <h2 className="text-center">Buzzmonitor Admin</h2>
+            <h3 className="text-center">Buzzmonitor Admin</h3>
             <div className="row justify-content-md-center">
-              <div className="col-sm-6">
+              <div className="col-sm-8">
                 <div className="input-group">
                   <input type="text" className="form-control" placeholder="Search"></input>
                   <div className="input-group-append">

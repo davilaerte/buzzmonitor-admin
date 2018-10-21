@@ -1,3 +1,4 @@
+/*----------- Navbar ----------------*/
 .logo-buzzmonitor {
   background: url(buzzmonitor-nav.png) no-repeat center;
   background-size: 180px;
@@ -35,6 +36,25 @@
   padding-right: 2em;
 }
 
+.nav-link-bar {
+  color: #E8E8E8;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.nav-link-bar:hover {
+  color: #FFAB36;
+}
+.nav-link, .nav-link-bar {
+  padding: 18px 12px;
+  display: block;
+}
+.nav-item {
+  cursor: pointer;
+}
+/*--------------------------------------*/
+
+/*------------ Containers---------------*/
 .container-title {
   margin-top: 80px;
   font: inherit;
@@ -50,21 +70,20 @@
   font: inherit;
 }
 
-.nav-link, .nav-link-bar {
-  padding: 18px 12px;
-  display: block;
+.tab-content {
+  border-left: solid;
+  border-right: solid;
+  border-bottom: solid;
+  border-width: 1px;
+  border-color: #dee2e6;
 }
 
-.nav-link-bar {
-  color: #E8E8E8;
-  font: inherit;
-  vertical-align: baseline;
+.container-inputs {
+  padding: 20px;
 }
+/*------------------------------------*/
 
-.nav-link-bar:hover {
-  color: #FFAB36;
-}
-
+/*----------- Drop down arrow -----------*/
 .drop-down-arrow {
   margin: 5px;
 }
@@ -79,27 +98,9 @@
   transform: rotate(45deg);
   -webkit-transform: rotate(45deg);
 }
+/*------------------------------------*/
 
-.tab-content {
-  border-left: solid;
-  border-right: solid;
-  border-bottom: solid;
-  border-width: 1px;
-  border-color: #dee2e6;
-}
-
-.container-inputs {
-  padding: 20px;
-}
-
-.btn {
-  width: 150px;
-}
-
-.nav-item {
-  cursor: pointer;
-}
-
+/* ------------------ Form --------------------*/
 .form-label {
   font-size: 16px;
   padding: 12px 1px;
@@ -110,9 +111,14 @@
   margin: 12px 1px;
 }
 
+.btn {
+  width: 150px;
+}
+
 .button-form {
   margin: 5px 0px;
 }
+/*---------------------------------------------*/
 
 @media (max-width: 1200px){	
   .nav-link {

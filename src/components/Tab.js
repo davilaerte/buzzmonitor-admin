@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
-// props = label, key, onClick, activeTab
 class Tab extends Component {
   static propTypes = {
     activeTab: PropTypes.string.isRequired,
